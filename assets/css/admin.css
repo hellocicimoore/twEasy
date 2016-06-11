@@ -1,0 +1,10 @@
+#twitterease_settings input[type="text"] {
+	width: 420px;
+	max-width: 100%;
+	font-size: 14px;
+}
+
+#twitterease_settings input[type="number"] {
+	width: 50px;
+	margin-right: 10px;
+}
