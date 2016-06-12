@@ -15,8 +15,8 @@ It's built to be light-weight and you can specify cache expiration.
 1. Install the plugin
 2. Activate the plugin
 3. Embed the feed on your website by either
-⋅⋅1 Using the Wordpress Widget available under Appearance :: Widgets or
-⋅⋅2 Placing the following shortcode where applicable
+  1. Using the Wordpress Widget available under Appearance :: Widgets or
+  2. Placing the following shortcode where applicable
 
 `[TwitterEase]`
 
