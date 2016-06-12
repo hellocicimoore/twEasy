@@ -103,8 +103,13 @@ class TwitterEase_Settings {
 	 */
 	private function settings_fields ( $secret_fields ) {
 
+		$settings['instructions'] = array(
+			'title' 				=> __('Instructions', 'twitterase' ),
+			'description'			=> __( BLANK, 'twitterease' ),
+		);
+
 		$settings['standard'] = array(
-			'title'					=> __( BLANK, 'twitterease' ),
+			'title'					=> __( 'Settings', 'twitterease' ),
 			'description'			=> __( BLANK, 'twitterease' ),
 			'fields'				=> array(
 				array(
@@ -149,16 +154,16 @@ class TwitterEase_Settings {
 				),
 				array(
 					'id' 			=> 'default_count',
-					'label'			=> __( 'Default number of tweets' , 'twitterease' ),
-					'description'	=> __( BLANK, 'twitterease' ),
-					'type'			=> 'text',
+					'label'			=> __( 'Tweets' , 'twitterease' ),
+					'description'	=> __( 'Number of tweets to display', 'twitterease' ),
+					'type'			=> 'number',
 					'default'		=> 5,
 					'placeholder'	=> __( BLANK, 'twitterease' )
 				),
 				array(
 					'id' 			=> 'cache_expire',
 					'label'			=> __( 'Cache Expiration' , 'twitterease' ),
-					'description'	=> __( 'Time to keep tweets before fetching new feed', 'twitterease' ),
+					'description'	=> __( 'Time ( in minutes ) to keep tweets before fetching new feed', 'twitterease' ),
 					'type'			=> 'number',
 					'default'		=> 10,
 					'placeholder'	=> __( BLANK, 'twitterease' )
@@ -229,7 +234,7 @@ class TwitterEase_Settings {
 
 		// Build page HTML
 		$html = '<div class="wrap" id="' . $this->parent->_token . '_settings">' . "\n";
-			$html .= '<h2>' . __( 'Settings' , 'twitterease' ) . '</h2>' . "\n";
+			$html .= '<h2>' . __( 'TwitterEase' , 'twitterease' ) . '</h2>' . "\n";
 
 			$tab = '';
 			if ( isset( $_GET['tab'] ) && $_GET['tab'] ) {
@@ -271,19 +276,25 @@ class TwitterEase_Settings {
 				$html .= '</h2>' . "\n";
 			}
 
-			$html .= '<form method="post" action="options.php" enctype="multipart/form-data">' . "\n";
-
-				// Get settings fields
+			if ( $tab == 'instructions') {
 				ob_start();
-				settings_fields( $this->parent->_token . '_settings' );
-				do_settings_sections( $this->parent->_token . '_settings' );
+				include $this->parent->dir . '/admin/views/instructions.php';
 				$html .= ob_get_clean();
+			} else {
+				$html .= '<form method="post" action="options.php" enctype="multipart/form-data">' . "\n";
 
-				$html .= '<p class="submit">' . "\n";
-					$html .= '<input type="hidden" name="tab" value="' . esc_attr( $tab ) . '" />' . "\n";
-					$html .= '<input name="Submit" type="submit" class="button-primary" value="' . esc_attr( __( 'Save Settings' , 'twitterease' ) ) . '" />' . "\n";
-				$html .= '</p>' . "\n";
-			$html .= '</form>' . "\n";
+					// Get settings fields
+					ob_start();
+					settings_fields( $this->parent->_token . '_settings' );
+					do_settings_sections( $this->parent->_token . '_settings' );
+					$html .= ob_get_clean();
+
+					$html .= '<p class="submit">' . "\n";
+						$html .= '<input type="hidden" name="tab" value="' . esc_attr( $tab ) . '" />' . "\n";
+						$html .= '<input name="Submit" type="submit" class="button-primary" value="' . esc_attr( __( 'Save Settings' , 'twitterease' ) ) . '" />' . "\n";
+					$html .= '</p>' . "\n";
+				$html .= '</form>' . "\n";
+			}
 		$html .= '</div>' . "\n";
 
 		echo $html;

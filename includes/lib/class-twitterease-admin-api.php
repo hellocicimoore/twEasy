@@ -68,6 +68,9 @@ class TwitterEase_Admin_API {
 		$html = '';
 
 		switch( $field['type'] ) {
+			case 'message':
+				$html .= $field["description"];
+				break;
 
 			case 'text':
 			case 'url':

@@ -8,3 +8,7 @@
 	width: 50px;
 	margin-right: 10px;
 }
+
+#twitterease_instructions li ol {
+	margin-top: 7px;
+}
