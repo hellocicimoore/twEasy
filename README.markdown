@@ -15,9 +15,9 @@ It's built to be light-weight and you can specify cache expiration. Requires Wor
 1. Install the plugin
   1. Download a zip from the [Github Repository](https://github.com/thebeard/Twitter-Ease) and upload the plugin files to the `/wp-content/plugins/twitterease` directory, or install the plugin through the WordPress plugins screen directly.
 2. Activate the plugin through the 'Plugins' screen in WordPress
-3. Use the Settings->Plugin Name screen, following the setup instructions and configuring the plugin
+3. Use the Settings->TwitterEase screen, following the setup instructions and configuring the plugin
 4. Embed the feed on your website by either
-  1. Using the Wordpress Widget available under Appearance :: Widgets or
+  1. Using the Wordpress Widget available under Appearance->Widgets or
   2. Placing the following shortcode where applicable
 
 `[TwitterEase]`
