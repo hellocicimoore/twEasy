@@ -200,20 +200,24 @@ class TwitterEase_Settings {
 				// Add section to page
 				add_settings_section( $section, $data['title'], array( $this, 'settings_section' ), $this->parent->_token . '_settings' );
 
-				foreach ( $data['fields'] as $field ) {
+				if ( $current_section == 'standard' ) {
 
-					// Validation callback for field
-					$validation = '';
-					if ( isset( $field['callback'] ) ) {
-						$validation = $field['callback'];
+					foreach ( $data['fields'] as $field ) {
+
+						// Validation callback for field
+						$validation = '';
+						if ( isset( $field['callback'] ) ) {
+							$validation = $field['callback'];
+						}
+
+						// Register field
+						$option_name = $this->base . $field['id'];
+						register_setting( $this->parent->_token . '_settings', $option_name, $validation );
+
+						// Add field to page
+						add_settings_field( $field['id'], $field['label'], array( $this->parent->admin, 'display_field' ), $this->parent->_token . '_settings', $section, array( 'field' => $field, 'prefix' => $this->base ) );
 					}
 
-					// Register field
-					$option_name = $this->base . $field['id'];
-					register_setting( $this->parent->_token . '_settings', $option_name, $validation );
-
-					// Add field to page
-					add_settings_field( $field['id'], $field['label'], array( $this->parent->admin, 'display_field' ), $this->parent->_token . '_settings', $section, array( 'field' => $field, 'prefix' => $this->base ) );
 				}
 
 				if ( ! $current_section ) break;
@@ -276,11 +280,8 @@ class TwitterEase_Settings {
 				$html .= '</h2>' . "\n";
 			}
 
-			if ( $tab == 'instructions') {
-				ob_start();
-				include $this->parent->dir . '/admin/views/instructions.php';
-				$html .= ob_get_clean();
-			} else {
+
+			if ( $tab == 'standard') {
 				$html .= '<form method="post" action="options.php" enctype="multipart/form-data">' . "\n";
 
 					// Get settings fields
@@ -294,6 +295,10 @@ class TwitterEase_Settings {
 						$html .= '<input name="Submit" type="submit" class="button-primary" value="' . esc_attr( __( 'Save Settings' , 'twitterease' ) ) . '" />' . "\n";
 					$html .= '</p>' . "\n";
 				$html .= '</form>' . "\n";
+			} else {
+				ob_start();
+				include $this->parent->dir . '/admin/views/instructions.php';
+				$html .= ob_get_clean();
 			}
 		$html .= '</div>' . "\n";
 

@@ -466,7 +466,6 @@ class TwitterEase {
 			if ( !$cache->isCached( 'twitterfeed' ) ) {
 
 				// Make call
-				error_log( 'make call' );
 				$feed = curl_init();
 				curl_setopt_array( $feed, $options );
 				$this->json = curl_exec( $feed );
