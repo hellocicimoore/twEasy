@@ -1,4 +1,4 @@
-# TwitterEase #
+# twEasy #
 
 ## Description ##
 
@@ -20,7 +20,7 @@ It's built to be light-weight and you can specify cache expiration. Requires Wor
   1. Using the Wordpress Widget available under Appearance->Widgets or
   2. Placing the following shortcode where applicable
 
-`[TwitterEase]`
+`[tweasy]`
 
 ## Next Steps ##
 

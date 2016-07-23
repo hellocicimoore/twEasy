@@ -1,6 +1,6 @@
-=== Plugin Name ===
+=== twEasy ===
 Contributors: ardinent
-Donate link: http://wordpressdeveloper.cape
+Donate link: http://wordpressdeveloper.capetown
 Tags: social
 Requires at least: 4.5.0
 Tested up to: 4.5.3
@@ -28,10 +28,10 @@ This plugin is primarily for developer use, but could be used by bloggers or DIY
 2. Activate the plugin through the 'Plugins' screen in WordPress
 3. Use the Settings->TwitterEase screen, following the setup instructions and configuring the plugin
 4. Embed the feed on your website by either
-  1. Using the Wordpress Widget available under Appearance :: Widgets or
+  1. Using the Wordpress Widget available under Appearance->Widgets or
   2. Placing the following shortcode where applicable
 
-[TwitterEase]
+`[tweasy]`
 
 == Screenshots ==
 

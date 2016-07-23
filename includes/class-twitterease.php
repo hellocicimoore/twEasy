@@ -210,7 +210,7 @@ class TwitterEase {
 		add_action( 'init', array( $this, 'load_localisation' ), 0 );
 
 		// Shortcode to add Twitter Feed anywhere
-		add_shortcode( 'TwitterEase', array( $this, 'primary_shortcode' ) );
+		add_shortcode( 'tweasy', array( $this, 'primary_shortcode' ) );
 
 		// Widget to add Twitter Feed in sidebar
 		add_action( 'widgets_init', array( $this, 'register_widget' ) );
