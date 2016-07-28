@@ -1,6 +1,6 @@
 <?php
 /*
- * Plugin Name: TwitterEase
+ * Plugin Name: twEasy
  * Version: 1.0
  * Description: Install a twitter feed without (too) much hassle
  * Author: Theunis Cilliers
@@ -30,7 +30,9 @@ require_once( 'includes/class-twitterease-widget.php' );
 require_once( 'includes/lib/class-twitterease-admin-api.php' );
 
 // Load vendor libraries
-require_once( 'vendor/cache.class.php' );
+if ( !class_exists( 'Cache' ) ) {
+	require_once( 'vendor/cache.class.php' );
+}
 
 /**
  * Returns the main instance of TwitterEase to prevent the need to use globals.

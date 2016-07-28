@@ -69,7 +69,7 @@ class TwitterEase_Settings {
 	 * @return void
 	 */
 	public function add_menu_item () {
-		$page = add_options_page( __( 'TwitterEase', 'twitterease' ) , __( 'TwitterEase', 'twitterease' ) , 'manage_options' , $this->parent->_token . '_settings' ,  array( $this, 'settings_page' ) );
+		$page = add_options_page( __( 'twEasy', 'twitterease' ) , __( 'twEasy', 'twitterease' ) , 'manage_options' , $this->parent->_token . '_settings' ,  array( $this, 'settings_page' ) );
 		add_action( 'admin_print_styles-' . $page, array( $this, 'settings_assets' ) );
 	}
 
@@ -238,7 +238,7 @@ class TwitterEase_Settings {
 
 		// Build page HTML
 		$html = '<div class="wrap" id="' . $this->parent->_token . '_settings">' . "\n";
-			$html .= '<h2>' . __( 'TwitterEase' , 'twitterease' ) . '</h2>' . "\n";
+			$html .= '<h2>' . __( 'twEasy' , 'twitterease' ) . '</h2>' . "\n";
 
 			$tab = '';
 			if ( isset( $_GET['tab'] ) && $_GET['tab'] ) {

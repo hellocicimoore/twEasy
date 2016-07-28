@@ -3,6 +3,7 @@
 	$( document ).ready( function() {
 
 		var tweets = JSON.parse( tWE_tweets );
+		tweets.reverse();
 
 		if ( tweets.length ) {
 

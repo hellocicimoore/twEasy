@@ -4,7 +4,7 @@ class Twitter_Ease_Widget extends WP_Widget {
 	function __construct() {
 		parent::__construct(
 			'wpb_widget', 
-			__('TwitterEase Widget', 'twitterease'), 
+			__('twEasy', 'twitterease'), 
 			array(
 				'description' => __( 'Adds a Twitter Feed Widget', 'twitterease' ),
 			) 

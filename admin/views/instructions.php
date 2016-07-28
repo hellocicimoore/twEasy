@@ -21,8 +21,8 @@
 		<li>Then continue to fill in your Twitter Username and complete the remaining settings and click Save Settings</li>
 		<li>Now, to display the Twitter Feed
 			<ol>
-				<li>Paste the shortcode <code>[TwitterEase]</code> wherever you want to display the Twitter feed or;</li>
-				<li>Go to <a href="<?php echo site_url(); ?>/wp-admin/widgets.php">Widgets</a> and use the <code>TwitterEase Widget</code> to place your Twitter Feed</li>
+				<li>Paste the shortcode <code>[tweasy]</code> wherever you want to display the Twitter feed or;</li>
+				<li>Go to <a href="<?php echo site_url(); ?>/wp-admin/widgets.php">Widgets</a> and use the <code>twEasy</code> Widget to place your Twitter Feed</li>
 			</ol>
 		</li>
 	</ol>
