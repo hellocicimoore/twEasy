@@ -12,7 +12,7 @@ A quick and easy solution to install a Twitter feed on your website.
 
 == Description ==
 
-Embed your Twitter feed into your Wordpress website using a shortcode and/or a Wordpress Widget. Wraps your feed with an ID and lets you style your own Twitter feed. There is no stylesheet included and it uses the `ul > li` format. This plugin is primarily for developer use, but could be used by bloggers as well.
+Embed your Twitter feed into your Wordpress website using a shortcode and/or a Wordpress Widget. Wraps your feed with an ID and lets you style your own Twitter feed. There is no stylesheet included and it uses the `ul > li` format. This plugin is primarily for developer use, but could be used by bloggers as well. My take on this.
 
 It's built to be light-weight and you can specify cache expiration.
 
